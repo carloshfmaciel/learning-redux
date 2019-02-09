@@ -1,29 +1,24 @@
 
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 
 class Contador extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        const {decrement,increment,count} = this.props
         return(
         <div>
             <h2>Counter</h2>
             <div>
-                <button onClick={this.props.decrement}>-</button>
-                <span>{this.props.count}</span>
-                <button onClick={this.props.increment}>+</button>
+                <button onClick={decrement}>-</button>
+                <span>{count}</span>
+                <button onClick={increment}>+</button>
             </div>
         </div>
         );
     }
 }
 
-const mapStateToProps = state => ({ count: state.count })
+const mapStateToProps = state => ({ count: state.contadorReducer.count })
 
 const mapDispatchToProps = dispatch => ({
     increment: () => dispatch({ type: 'INCREMENT' }),

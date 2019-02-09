@@ -1,8 +1,8 @@
-import { combineReducers } from 'react';
-import ContadorReducer from './components/contador/reducer';
+import { combineReducers } from 'redux';
+import contadorReducer from './components/contador/reducer';
 
 const rootReducer = combineReducers({
-    ContadorReducer: ContadorReducer, 
+    contadorReducer
 });
 
 export default rootReducer;
